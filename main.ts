@@ -29,6 +29,29 @@ class Twico {
     this.mainWindow.on('closed', () => {
       this.mainWindow = null
     })
+    this.onChangeIsAlwaysShowTop(true) // default always on top
+
+    const menu = electron.Menu.buildFromTemplate([
+      {
+        label: 'View',
+        submenu: [
+          {
+            label: 'Always Show top',
+            type: 'checkbox',
+            checked: true,
+            click(menuItem) {
+              this.onChangeIsAlwaysShowTop(menuItem.checked)
+            }
+          }
+        ]
+      }
+    ])
+
+    electron.Menu.setApplicationMenu(menu)
+  }
+
+  onChangeIsAlwaysShowTop = (isAlwaysShowTop: boolean) => {
+    this.mainWindow.setAlwaysOnTop(isAlwaysShowTop)
   }
 }
 
