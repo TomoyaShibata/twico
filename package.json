@@ -6,6 +6,7 @@
   "scripts": {
     "start": "npm run tsc & npm run start-app",
     "tsc": "tsc main.ts",
+    "webpack": "webpack",
     "start-app": "electron ."
   },
   "keywords": [],
@@ -17,6 +18,11 @@
   },
   "devDependencies": {
     "@types/electron": "^1.4.31",
-    "vue-class-component": "^4.4.0"
+    "stylus": "^0.54.5",
+    "ts-loader": "^2.0.0",
+    "typescript": "^2.1.5",
+    "vue-class-component": "^4.4.0",
+    "vue-loader": "^10.0.2",
+    "webpack": "^2.2.0"
   }
 }
